@@ -4,15 +4,11 @@ public class isPrime {
         Scanner data = new Scanner(System.in);
         System.out.print("Nhập số n: ");
         int n = data.nextInt();
-        System.out.print(IsPrime(n));
-    }
-
-    public static boolean IsPrime(int x) {
-        if (x < 2) {return false;}
-        for (int i = 2; i <= Math.sqrt(x); i++) {
-            if (x % i == 0) {return false;}
+        boolean check = true;
+        if (n < 2) {check = false;}
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {check = false;}
         }
-        return true;
+        System.out.print(check);
     }
 }
-
