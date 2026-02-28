@@ -1,18 +1,17 @@
 import java.util.Scanner;
-public class isPrime {
+public class isPalindrome {
     public static void main(String[] args) {
         Scanner data = new Scanner(System.in);
         System.out.print("Nhập số n: ");
-        int n = data.nextInt();
-        boolean check = true;
-        if (n < 2) {
-            check = false;
+        int x = data.nextInt();
+        int rev = 0;
+        int original = x;
+        boolean check = false;
+        while (x>0) {
+            rev = rev*10 + x%10;
+            x = x/10;
         }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                check = false;
-            }
-        }
+        if (original == rev) {check = true;}
         System.out.print(check);
     }
 }
